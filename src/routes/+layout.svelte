@@ -31,12 +31,12 @@
 		margin: 0;
 		-ms-overflow-style: none;
 		/* IE and Edge */
-		scrollbar-width: none;
+		/* scrollbar-width: none; */
 		/* Firefox */
 	}
 
 	:global(*::-webkit-scrollbar) {
-		display: none;
+		/* display: none; */
 	}
 
 	/*
@@ -47,6 +47,9 @@
 	:global(body) {
 		line-height: 1.5;
 		-webkit-font-smoothing: antialiased;
+		height: 100vh;
+		overflow: hidden;
+		background-color: #f9fafb;
 	}
 
 	/*
@@ -159,5 +162,9 @@
 
 	nav > a > img {
 		height: 1.5rem;
+	}
+
+	:global(main) {
+		height: calc(100vh - 3.5rem);
 	}
 </style>

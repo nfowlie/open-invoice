@@ -109,7 +109,9 @@
 			</label>
 		</div>
 	</section>
-	<section id="invoicePreview"></section>
+	<section id="invoicePreview">
+		<div class="invoice"></div>
+	</section>
 </main>
 
 <style>
@@ -117,14 +119,23 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 3rem;
-		margin-block: 2rem;
 		margin-inline: 1rem;
 	}
 
-	#invoiceEditor {
+	#invoiceEditor,
+	#invoicePreview {
+		overflow-y: scroll;
 		display: grid;
 		gap: 2rem;
+		padding-inline-end: 2rem;
+		padding-block: 2rem;
+	}
+
+	#invoiceEditor {
+		justify-content: end;
+
 		.invoice-block {
+			background-color: #fff;
 			padding: 1.25rem;
 			border-radius: 8px;
 			box-shadow:
@@ -134,6 +145,7 @@
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 0.8rem;
+			width: min(100%, 700px);
 
 			label {
 				display: grid;
@@ -161,10 +173,21 @@
 				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 				padding-inline: 0.75rem;
 				padding-block: 0.5rem;
+				width: 100%;
 			}
 		}
 	}
 
 	#invoicePreview {
+		justify-content: start;
+
+		.invoice {
+			aspect-ratio: 8.5/11;
+			box-shadow:
+				rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+				rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+			height: 700px;
+			background-color: #fff;
+		}
 	}
 </style>
