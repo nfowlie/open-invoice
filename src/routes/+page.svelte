@@ -8,7 +8,7 @@
 				<p class="disclaimer">No sign up required</p>
 			</div>
 		</div>
-		<div></div>
+		<div id="invoice"></div>
 	</section>
 </main>
 
@@ -20,6 +20,7 @@
 	#hero {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
 
 		h1 {
 			font-size: 3rem;
@@ -31,6 +32,7 @@
 
 		p {
 			font-size: 1.25rem;
+			text-wrap: pretty;
 		}
 		.create {
 			margin-block-start: 3rem;
@@ -48,12 +50,21 @@
 		}
 	}
 
-	@media (max-width: 730px) {
+	#invoice {
+		aspect-ratio: 8.5/11;
+		box-shadow:
+			rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+			rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+		height: 700px;
+	}
+
+	@media (max-width: 900px) {
 		#hero {
 			grid-template-columns: 1fr;
 
 			align-items: center;
 			text-align: center;
+			justify-items: center;
 
 			h1 {
 				font-size: 2.5rem;
